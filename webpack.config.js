@@ -20,6 +20,13 @@ module.exports = {
         rules:[
             {test:/\.js|.jsx$/,use:'babel-loader',exclude:/node_modules/}   //排除node_modules
         ]
+    },
+    
+    resolve:{
+        extensions:['.js','.jsx','.json'],    //引入组件时，表示可以省略这几个后缀名
+        alias:{
+            '@':path.join(__dirname,'./src')  //这样，@ 就表示项目的跟目录
+        }
     }
 
 }
