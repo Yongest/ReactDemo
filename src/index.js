@@ -19,24 +19,38 @@ arr.forEach((item,i)=>{
     newArr.push (<h2 key={i}>{item}</h2>)
 })
 // 没有导出的写法。
-import '@/class'
+// import '@/class'
 
-import Hello from '@/components/Hello'
+// import '@/classSuper'
+
+// import Hello from '@/components/Hello'
+
+// import Movie from '@/components/Movie'
 let dog = {
     name:'小黄',
     age:5,
-    gender:'雄'
+    gender:'雄',
+    time:'晚上九点开播'
 }
 
+// 导入评论组件
+import Comment from '@/components/Comment'
+
+
 ReactDom.render(<div>
-{newArr}
+{/* // {newArr} */}
 <hr/>
-{arr.map(item=><div key={item}><h2>{item}</h2></div>)}
+{/* // {arr.map(item=><div key={item}><h2>{item}</h2></div>)} */}
 <hr/>
-<div className='blue'>好了</div>
+{/* <div className='blue'>好了</div> */}
 {/* 组件的第一种用法 */}
-<Hello name={dog.name} age={dog.age}></Hello>
+{/* <Hello name={dog.name} age={dog.age}></Hello> */}
 
 {/* 展开运算符的用法 */}
-<Hello {...dog}></Hello>
+{/* <Hello {...dog}></Hello> */}
+<hr/>
+
+{/* <Movie {...dog}></Movie> */}
+<Comment></Comment>
+
 </div>,document.querySelector('#app'))

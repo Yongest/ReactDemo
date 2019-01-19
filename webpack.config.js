@@ -18,7 +18,12 @@ module.exports = {
     ],
     module:{  //模块的配置规则
         rules:[
-            {test:/\.js|.jsx$/,use:'babel-loader',exclude:/node_modules/}   //排除node_modules
+            {test:/\.js|.jsx$/,use:'babel-loader',exclude:/node_modules/},   //排除node_modules
+            {test:/\.css$/,use:['style-loader','css-loader']},
+            // 字体图标处理
+            {test:/\.ttf|.woff2|.woff|.eot|.svg$/,use:'url-loader'},
+            {test:/\.scss$/,use:['style-loader','css-loader?modules&localIdentName=[path][name]-[local]-[hash:6]','sass-loader']},
+
         ]
     },
     
